@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
     }
     private void jumpplayer()
     {
-        if (Input.GetKey(KeyCode.Space) && jumpCount < 1)
+        if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 1)
         {
             playerRb.AddForce(Vector3.up * 10, ForceMode.Impulse);
             jumpCount++;
