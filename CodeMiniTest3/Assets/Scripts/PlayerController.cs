@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public float speed2;
     public Animator aniController;
     Rigidbody playerRb;
+    Renderer playerRdr;
+    public Material[] playerMtrs;
     float gravityModifier = 2f;
     float jumpCount = 0f;
     public GameObject PosText;
@@ -17,6 +19,7 @@ public class PlayerController : MonoBehaviour
     int timeCountInt;
     public GameObject Bridge;
     public GameObject MovingPlatform;
+    public GameObject Child;
     float coinCount;
     bool timerstart= false;
     bool forward = true;
@@ -25,6 +28,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
+        playerRdr = Child.GetComponent<SkinnedMeshRenderer>();
         Physics.gravity *= gravityModifier;
     }
 
@@ -99,6 +103,7 @@ public class PlayerController : MonoBehaviour
         {
             jumpCount = 0f;
             aniController.SetBool("Jump", false);
+            playerRdr.material.color = playerMtrs[1].color;
         }
         if(collision.gameObject.CompareTag("QuestionMark"))
         {
@@ -111,6 +116,7 @@ public class PlayerController : MonoBehaviour
         {
             playerRb.AddForce(Vector3.up * 10, ForceMode.Impulse);
             jumpCount++;
+            playerRdr.material.color = playerMtrs[0].color;
             aniController.SetBool("Jump", true);
         }
         if(Input.GetKeyUp(KeyCode.Space))

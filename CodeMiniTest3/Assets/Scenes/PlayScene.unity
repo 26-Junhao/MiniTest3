@@ -251,9 +251,13 @@ MonoBehaviour:
   speed: 10
   speed2: 3
   aniController: {fileID: 1456142189}
+  playerMtrs:
+  - {fileID: 2100000, guid: 0e66f142f1e0e744695936d2a4b2d213, type: 2}
+  - {fileID: 2100000, guid: 31676882763b1bb4b8bba8d50064d4dd, type: 2}
   PosText: {fileID: 283425936}
   Bridge: {fileID: 154962288}
   MovingPlatform: {fileID: 1091872941}
+  Child: {fileID: 1492934046}
 --- !u!65 &114672820
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -745,6 +749,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 72cb7dc1a31279843b89b27f7e3163e4, type: 2}
+    - target: {fileID: 13700002, guid: 2dc7b382d25903545b405802eb2198ab, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2dc7b382d25903545b405802eb2198ab, type: 3}
 --- !u!1001 &699990186
@@ -1523,6 +1531,12 @@ Animator:
 --- !u!4 &1456142190 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400016, guid: 2dc7b382d25903545b405802eb2198ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 610401564}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1492934046 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100014, guid: 2dc7b382d25903545b405802eb2198ab,
     type: 3}
   m_PrefabInstance: {fileID: 610401564}
   m_PrefabAsset: {fileID: 0}
